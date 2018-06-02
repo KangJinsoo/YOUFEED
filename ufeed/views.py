@@ -42,5 +42,13 @@ def delete(request, pk):
 	userdata.delete()
 	return redirect('modify')
 
+def all_userdata_delete(request):
+	userdata = Userdata.objects.all()
+	userdata.delete()
+	return redirect('modify')
+
 def notify(request):
 	return render(request, 'ufeed/notify.html')
+
+def set_data(request):
+	return render(request, 'ufeed/set_data.html')
