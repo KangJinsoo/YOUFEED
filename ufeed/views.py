@@ -41,3 +41,6 @@ def delete(request, pk):
 	userdata = get_object_or_404(Userdata, pk=pk)
 	userdata.delete()
 	return redirect('modify')
+
+def notify(request):
+	return render(request, 'ufeed/notify.html')
