@@ -2,7 +2,15 @@
 
 {% block content %}
   <div class="content-wrapper">
-    #
+    <div class="container-fluid">
+      <h4>Crawling 데이터 초기화</h4>
+      <hr>
+      <p>아래 초기화 버튼을 누르시면 저장되어있던 모든 데이터가 삭제되며 복구할 수 없습니다.</p>
+      <a class="btn btn-primary" href="{% url 'all_crawldata_delete' %}" id="toggleNavPosition">초기화</a>
+      <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+      <div style="height: 80px;"></div>
+    </div>
+
     <div class="container-fluid">
       <h4>Userdata 데이터 초기화</h4>
       <hr>

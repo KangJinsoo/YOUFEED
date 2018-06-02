@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^notify/$', views.notify, name='notify'),
     url(r'^set_data/$',views.set_data, name='set_data'),
     url(r'^modify/delete_userdata/$', views.all_userdata_delete, name='all_userdata_delete'),
+    url(r'^modify/delete_crwaldata/$', views.all_crawldata_delete, name='all_crawldata_delete'),
 
 ]

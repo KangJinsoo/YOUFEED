@@ -47,6 +47,11 @@ def all_userdata_delete(request):
 	userdata.delete()
 	return redirect('modify')
 
+def all_crawldata_delete(request):
+	crawldata = Crawldata.objects.all()
+	crawldata.delete()
+	return redirect('notify')
+
 def notify(request):
 	return render(request, 'ufeed/notify.html')
 
