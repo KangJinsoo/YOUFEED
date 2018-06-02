@@ -15,7 +15,6 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
 
 
-'''
 class Userdata(models.Model):
     user = models.ForeignKey(User,unique=True, null=False, db_index=True)
     key = models.CharField(max_length=200)
@@ -25,7 +24,7 @@ class Crawldata(models.Model): # 무엇을 더 추가 할지.
     user = models.ForeignKey(User,unique=True, null=False, db_index=True)
     title = models.CharField(max_length=200)
     url = models.TextField()
-'''
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
