@@ -16,12 +16,12 @@ class Profile(models.Model):
 
 
 class Userdata(models.Model):
-    user = models.ForeignKey(User,unique=True, null=False, db_index=True)
+    user = models.ForeignKey(User, null=False)
     key = models.CharField(max_length=200)
     url = models.TextField()
 
 class Crawldata(models.Model): # 무엇을 더 추가 할지.
-    user = models.ForeignKey(User,unique=True, null=False, db_index=True)
+    user = models.ForeignKey(User, null=False)
     title = models.CharField(max_length=200)
     url = models.TextField()
 

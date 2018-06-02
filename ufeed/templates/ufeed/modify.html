@@ -1,0 +1,38 @@
+{% extends 'ufeed/base.html' %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Keyword, URL </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="table-layout:fixed">
+              <thead>
+                <tr>
+                  <th>KEY</th>
+                  <th>URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for userdata in userdatas %}
+                <tr>
+                  <td>{{ userdata.key }}
+                  </td>
+                  <td width="100" style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="#">{{ userdata.url }}</a></nobr></td>
+                  <td class="actions">
+                    <a href="{% url 'edit' pk=userdata.pk %}" class="edit-item" title="Edit">수정</a>
+                    <a href="{% url 'delete' pk=userdata.pk %}" class="delete-item" title="Delete">삭제</a> 
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+{% endblock %}
