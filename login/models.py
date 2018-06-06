@@ -9,7 +9,7 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User,unique=True, null=False, db_index=True) #User라는 모델이 지금 django.contrib.auth.models로부터 import
+    user = models.OneToOneField(User, db_index=True) #User라는 모델이 지금 django.contrib.auth.models로부터 import
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)

@@ -5,7 +5,6 @@ from login.forms import UserdataForm
 from django.contrib.auth.models import User
 
 
-
 def index(request):
 	return render(request, 'ufeed/index.html')
 

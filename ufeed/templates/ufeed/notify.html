@@ -59,6 +59,17 @@
     white-space: normal;
     text-align:left;
   }
+
+  #myDataTable td:nth-child(3) {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25%;
+    white-space: normal;
+    text-align:left;
+  }
+
  
   #myDataTable td:before { 
     /* Now like a table header */
@@ -78,6 +89,7 @@
   */
   #myDataTable td:nth-of-type(1):before { content: "TITLE"; }
   #myDataTable td:nth-of-type(2):before { content: "URL"; }
+  #myDataTable td:nth-of-type(3):before { content: "DATE"; }
   }
   </style>
 

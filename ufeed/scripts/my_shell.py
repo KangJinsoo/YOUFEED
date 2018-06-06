@@ -5,6 +5,9 @@ import datetime
 from bs4 import BeautifulSoup
 from login.models import Userdata, Crawldata
 
+from django.contrib import messages
+
+
 #/Users/LeeTaeHun/DjangoProjects/myvenv/bin/python manage.py runscript -v2 my_shell
 #/Users/LeeTaeHun/DjangoProjects/myvenv/bin/python /Users/LeeTaeHun/DjangoProjects/YOUFEED/manage.py runscript -v2 my_shell
 #* * * * * (sleep 30 ; /Users/LeeTaeHun/DjangoProjects/myvenv/bin/python /Users/LeeTaeHun/DjangoProjects/YOUFEED/manage.py runscript -v2 my_shell)
@@ -66,6 +69,7 @@ def run():
                 now = datetime.datetime.now()
                 nowDatetime = now.strftime('%Y-%m-%d %H:%M')
                 Crawldata.objects.create(user=user, title=result_title[0].strip(), url=result_url, reg_date=nowDatetime)
+
             else:
                 print("DB Already insert ")
 
