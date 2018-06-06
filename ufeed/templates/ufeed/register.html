@@ -4,14 +4,14 @@
   <div class="content-wrapper">
     <div class="container-fluid">
     <div class="container">
-    <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register Keywords, URLs</div>
-      <div class="card-body">
-          <form method="POST" class="post-form">{% csrf_token %}
+    <div style="vertical-align: middle">
+        <form method="POST" class="post-form">{% csrf_token %}
+    <!--<form method="POST" class="post-form form-control">{% csrf_token %}-->
             {{form.as_p}}
-            <button type="submit" class="save btn btn-default">Register</button>
+            <div style="text-align: right">
+            <button type="submit" class="save btn btn-primary">등록</button>
+            </div>
         </form>
-        </div>
     </div>
     </div>
     </div>

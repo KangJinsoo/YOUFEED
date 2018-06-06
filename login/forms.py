@@ -18,6 +18,11 @@ class UserdataForm(forms.ModelForm):
     class Meta:
         model = Userdata
         fields = ('key','url')
+        widgets = {
+            'key': forms.TextInput(attrs={'class': 'form-control'}),
+            'url': forms.TextInput(attrs={'class': 'form-control'})
+        }
+
 
 class CrawldataForm(forms.ModelForm):
     class Meta:
