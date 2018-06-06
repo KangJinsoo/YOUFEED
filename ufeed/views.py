@@ -53,7 +53,8 @@ def all_crawldata_delete(request):
 	return redirect('notify')
 
 def notify(request):
-	return render(request, 'ufeed/notify.html')
+	crawldatas = Crawldata.objects.all()
+	return render(request, 'ufeed/notify.html', {'crawldata' : crawldatas})
 
 def set_data(request):
 	return render(request, 'ufeed/set_data.html')

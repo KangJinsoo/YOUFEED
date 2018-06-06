@@ -46,7 +46,6 @@
     border-bottom: 1px solid #eee; 
     position: relative;
     padding-left: 25%;
-    max-height: 18px;
     white-space: normal;
     text-align:left;
   }
@@ -57,7 +56,6 @@
     border-bottom: 1px solid #eee; 
     position: relative;
     padding-left: 25%;
-    max-height: 18px;
     white-space: normal;
     text-align:left;
   }
@@ -139,64 +137,22 @@
   </nav>
   <div class="content-wrapper">
   <div class="container-fluid">
-      <!-- Example DataTables Card-->
           <div class="table-responsive">
-            <table class="table table-bordered" id="myDataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="myDataTable" width="100%" cellspacing="0" style="table-layout:fixed">
               <thead>
                 <tr>
-                  <th>제목</th>
+                  <th>TITLE</th>
                   <th>URL</th>
                 </tr>
               </thead>
               <tbody>
+                {% for crawldata in crawldatas %}
                 <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.title }}</nobr>
+                  </td>
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ crawldata.url }}" title="{{ crawldata.url }}">{{ crawldata.url }}</a></nobr></td> 
                 </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                </tr>
-                <tr>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                </tr>
-                <tr>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                </tr>
-                <tr>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                </tr>
-                <tr>
-                  <td>Brielle Williamson</td>
-                  <td>New York</td>
-                </tr>
-                <tr>
-                  <td>Hermione Butler</td>
-                  <td>London</td>
-                </tr>
-                <tr>
-                  <td>Lael Greer</td>
-                  <td>London</td>
-                </tr>
-                <tr>
-                  <td>Jonas Alexander</td>
-                  <td>Developer</td>
-                </tr>
-                <tr>
-                  <td>Shad Decker</td>
-                  <td>Regional Director</td>
-                </tr>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
             <br>
