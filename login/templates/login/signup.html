@@ -1,0 +1,17 @@
+{% extends 'ufeed/base.html' %}
+
+{% block content %}
+    <div class="content-wrapper">
+    <div class="container-fluid">
+    <div class="container" style="position:absoulte;width:100%;height:100%;">
+
+<h2>회원가입</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="회원가입" />
+</form>
+
+    </div>
+    </div>
+{% endblock %}

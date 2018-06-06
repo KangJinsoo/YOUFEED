@@ -19,14 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'o1dhfovxj!tvzvqq%)mbj_job*dc5%s@-=%7#om5x%u#^*aa&_'
-# Google ID
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1027065436533-majupl60abdhcootb08n2u91u7po81fp.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Vi9St0mKuZXqEFD5tmMHnYQZ' #Paste Secret Key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+
+ALLOWED_HOSTS = ['127.0.0.1', '125.131.73.79']
+
+
 
 # Application definition
 
@@ -38,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
-    'social_django',
     'django_extensions',
     'ufeed',
 ]
@@ -53,19 +53,16 @@ WEBPUSH_SETTINGS = {
 #Google API setting
 #Some other dependencies 
 AUTHENTICATION_BACKENDS = (
- 'social_core.backends.open_id.OpenIdAuth',
- 'social_core.backends.google.GoogleOpenId',
- 'social_core.backends.google.GoogleOAuth2',
- 'django.contrib.auth.backends.ModelBackend',
+  'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+#SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 LGOIN_REDIRECT_URL='/'
 
 context_processors = [
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
+              #  'social_django.context_processors.backends',
+              #  'social_django.context_processors.login_redirect',
             ]
 
 SOCIAL_AUTH_PIPELINE = (
@@ -82,21 +79,21 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.debug.debug',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_IGNORE_DEFAULT_SCOPE = True
-SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
-'https://www.googleapis.com/auth/userinfo.email',
-'https://www.googleapis.com/auth/userinfo.profile'
-]
+#SOCIAL_AUTH_GOOGLE_OAUTH2_IGNORE_DEFAULT_SCOPE = True
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+#'https://www.googleapis.com/auth/userinfo.email',
+#'https://www.googleapis.com/auth/userinfo.profile'
+#]
 
 # Google+ SignIn (google-plus)
-SOCIAL_AUTH_GOOGLE_PLUS_IGNORE_DEFAULT_SCOPE = True
-SOCIAL_AUTH_GOOGLE_PLUS_SCOPE = [
-'https://www.googleapis.com/auth/plus.login',
-'https://www.googleapis.com/auth/userinfo.email',
-'https://www.googleapis.com/auth/userinfo.profile'
-]
+#SOCIAL_AUTH_GOOGLE_PLUS_IGNORE_DEFAULT_SCOPE = True
+#SOCIAL_AUTH_GOOGLE_PLUS_SCOPE = [
+#'https://www.googleapis.com/auth/plus.login',
+#'https://www.googleapis.com/auth/userinfo.email',
+#'https://www.googleapis.com/auth/userinfo.profile'
+#]
 
-LOGIN_URL = '/account/login/'
+LOGIN_URL = 'login/signin'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
