@@ -28,9 +28,6 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Vi9St0mKuZXqEFD5tmMHnYQZ' #Paste Secret Key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,8 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'social_django',
+    'django_extensions',
     'ufeed',
 ]
+
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "1",
+    "VAPID_PRIVATE_KEY":"2",
+    "VAPID_ADMIN_EMAIL": "lthwea@gmail.com"
+}
+
 
 #Google API setting
 #Some other dependencies 

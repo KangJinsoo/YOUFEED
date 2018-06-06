@@ -4,6 +4,8 @@ from login.models import Userdata, Crawldata
 from login.forms import UserdataForm
 from django.contrib.auth.models import User
 
+
+
 def index(request):
 	return render(request, 'ufeed/index.html')
 
@@ -20,7 +22,9 @@ def register(request):
 		return render(request, 'ufeed/register.html', {'form': form})
 
 def modify(request):
-	userdatas = Userdata.objects.all()
+	#userdatas = Userdata.objects.all()
+	id = request.user.id
+	userdatas = Userdata.objects.filter(user_id=id).order_by('-id')
 	return render(request, 'ufeed/modify.html', {'userdatas' : userdatas})
 
 def edit(request, pk):
@@ -53,8 +57,10 @@ def all_crawldata_delete(request):
 	return redirect('notify')
 
 def notify(request):
-	crawldatas = Crawldata.objects.all()
-	return render(request, 'ufeed/notify.html', {'crawldata' : crawldatas})
+	#crawldatas = Crawldata.objects.all()
+	id = request.user.id
+	crawldatas = Crawldata.objects.filter(user_id=id).order_by('-id')
+	return render(request, 'ufeed/notify.html', {'crawldatas' : crawldatas})
 
 def set_data(request):
 	return render(request, 'ufeed/set_data.html')

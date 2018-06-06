@@ -143,14 +143,15 @@
                 <tr>
                   <th>TITLE</th>
                   <th>URL</th>
+                  <th>REG_DATE</th>
                 </tr>
               </thead>
               <tbody>
                 {% for crawldata in crawldatas %}
                 <tr>
-                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.title }}</nobr>
-                  </td>
-                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ crawldata.url }}" title="{{ crawldata.url }}">{{ crawldata.url }}</a></nobr></td> 
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.title }}</nobr> </td>
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ crawldata.url }}" title="{{ crawldata.url }}">{{ crawldata.url }}</a></nobr></td>
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.reg_date }}</nobr> </td>
                 </tr>
                 {% endfor %}
               </tbody>

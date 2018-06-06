@@ -20,10 +20,13 @@ class Userdata(models.Model):
     key = models.CharField(max_length=200)
     url = models.TextField()
 
+
+
 class Crawldata(models.Model): # 무엇을 더 추가 할지.
     user = models.ForeignKey(User, null=False)
     title = models.CharField(max_length=200)
     url = models.TextField()
+    reg_date = models.TextField(default='-')
 
 
 @receiver(post_save, sender=User)
