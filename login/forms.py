@@ -25,7 +25,7 @@ class UserdataForm(forms.ModelForm):
         fields = ('key','url')
         widgets = {
             'key': forms.TextInput(attrs={'class': 'form-control'}),
-            'url': forms.TextInput(attrs={'class': 'form-control'})
+            'url': forms.URLInput(attrs={'class': 'form-control'})
         }
 
 

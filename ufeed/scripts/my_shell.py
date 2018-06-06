@@ -4,6 +4,7 @@ import urllib3
 import datetime
 from bs4 import BeautifulSoup
 from login.models import Userdata, Crawldata
+import requests
 
 #/Users/LeeTaeHun/DjangoProjects/myvenv/bin/python manage.py runscript -v2 my_shell
 #/Users/LeeTaeHun/DjangoProjects/myvenv/bin/python /Users/LeeTaeHun/DjangoProjects/YOUFEED/manage.py runscript -v2 my_shell
@@ -66,6 +67,9 @@ def run():
                 now = datetime.datetime.now()
                 nowDatetime = now.strftime('%Y-%m-%d %H:%M')
                 Crawldata.objects.create(user=user, title=result_title[0].strip(), url=result_url, reg_date=nowDatetime)
+                header = {'Content-Type':'application/json', 'Authorization':'key=AAAApnMgDVI:APA91bEHuLeHP4y80Ksn5ofyL1307Id_GumdSt9TzZetcse-ZAbuIlVP-uzM0_Sv-ZmCPT03Z4ukztD9TRdVHuGpXsu7SFhNbkvv0trybby3CzHLO_mepw5S9LzUtnathLazZMbWW_Cd'}
+                data = {"data": {        "message": {"title": result_title[0].strip(), "contents": result_url, "imgurl":"http://work.kr/data/icon.png", "link": ""}}, "to": "/topics/notice" }
+                requests.post('http://fcm.googleapis.com/fcm/send', headers=header, json=data)
             else:
                 print("DB Already insert ")
 
