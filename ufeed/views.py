@@ -53,13 +53,15 @@ def delete(request, pk):
 
 @login_required
 def all_userdata_delete(request):
-	userdata = Userdata.objects.all()
+	id = request.user.id
+	userdata = Userdata.objects.filter(user_id=id)
 	userdata.delete()
 	return redirect('modify')
 
 @login_required
 def all_crawldata_delete(request):
-	crawldata = Crawldata.objects.all()
+	id = request.user.id
+	crawldata = Crawldata.objects.filter(user_id=id)
 	crawldata.delete()
 	return redirect('notify')
 
