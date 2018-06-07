@@ -172,7 +172,7 @@
                 <tr>
                   <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ userdata.key }}</nobr>
                   </td>
-                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ userdata.url }}" title="{{ userdata.url }}">{{ userdata.url }}</a></nobr></td> 
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ userdata.url }}" title="{{ userdata.url }}" target="_blank">{{ userdata.url }}</a></nobr></td>
                   <td>
                     <a href="{% url 'edit' pk=userdata.pk %}" class="save btn btn-primary btn-sm" title="Edit">수정</a>
                     <a href="{% url 'delete' pk=userdata.pk %}" class="save btn btn-primary btn-sm" title="Delete">삭제</a>  

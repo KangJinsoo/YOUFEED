@@ -162,7 +162,7 @@
                 {% for crawldata in crawldatas %}
                 <tr>
                   <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.title }}</nobr> </td>
-                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ crawldata.url }}" title="{{ crawldata.url }}">{{ crawldata.url }}</a></nobr></td>
+                  <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr><a href="{{ crawldata.url }}" title="{{ crawldata.url }}" target="_blank">{{ crawldata.url }}</a></nobr></td>
                   <td width:auto style="text-overflow:ellipsis; overflow:hidden"><nobr>{{ crawldata.reg_date }}</nobr> </td>
                 </tr>
                 {% endfor %}
