@@ -30,7 +30,7 @@ def signin(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('index')
+            return redirect('notify')
         else:
             return HttpResponse('로그인 실패. 다시 시도 해보세요.')
     else:

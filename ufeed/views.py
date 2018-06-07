@@ -26,6 +26,8 @@ def modify(request):
 	#userdatas = Userdata.objects.all()
 	id = request.user.id
 	userdatas = Userdata.objects.filter(user_id=id).order_by('-id')
+	if	len(userdatas) == 0:
+		return redirect('index')
 	return render(request, 'ufeed/modify.html', {'userdatas' : userdatas})
 
 @login_required
